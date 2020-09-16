@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "326930209605",
+    "firebase_url": "https://androidlocationtracker-8d3fb.firebaseio.com",
+    "project_id": "androidlocationtracker-8d3fb",
+    "storage_bucket": "androidlocationtracker-8d3fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326930209605:android:bd87f24b9369322ed13c2c",
+        "android_client_info": {
+          "package_name": "com.example.androidkotlingpsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326930209605-2bplod4pjcebk3ht9mtimje7b7udveih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm4pG-J52NAQz-1OM4ZQTPXjK0VmiAFSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326930209605-2bplod4pjcebk3ht9mtimje7b7udveih.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
