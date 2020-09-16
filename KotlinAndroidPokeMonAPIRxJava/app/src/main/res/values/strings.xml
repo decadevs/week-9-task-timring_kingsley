@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">KotlinAndroidPokeMonAPI</string>
+    <string name="image_view_header_description">pokemon_header_image</string>
+</resources>

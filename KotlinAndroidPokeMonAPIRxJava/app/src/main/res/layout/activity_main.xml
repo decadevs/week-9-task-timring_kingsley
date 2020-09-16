@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgError"
+        app:layout_constraintTop_toBottomOf="@id/etnumOfPokemonToLoad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/nonetwork"
+        />
+
+    <ImageView
+        android:id="@+id/imgBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pokemonimg" />
+
+    <EditText
+        android:id="@+id/etnumOfPokemonToLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Number of Pokemon To Load"
+        tools:layout_editor_absoluteX="85dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgBanner"
+        tools:layout_editor_absoluteY="150dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPokemon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etnumOfPokemonToLoad" />
+
+    <ImageView
+        android:id="@+id/imageViewHeader"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/image_view_header_description"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rvPokemon"
+        app:srcCompat="@drawable/pokemonbanner" />
+
+    <ImageView
+        android:id="@+id/imageSmall"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#ffcc66"
+        android:contentDescription="@string/image_view_header_description"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewHeader"
+        app:layout_constraintDimensionRatio="w,2:2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewHeader"
+        app:srcCompat="@drawable/pokemonbanner" />
+
+    <TextView
+        android:id="@+id/tvpokemonName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="9dp"
+        android:background="#ffddcc"
+        android:gravity="center"
+        android:text="Pokemon Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPoster"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewHeader" />
+
+    <TextView
+        android:id="@+id/tvAbilityHeader"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="Ability"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvpokemonName" />
+
+    <TextView
+        android:id="@+id/tvAbilities"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:scrollbars="vertical"
+        android:text="Ability"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAbilityHeader" />
+
+    <TextView
+        android:id="@+id/tvMoveHeader"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="Moves"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAbilities" />
+
+    <TextView
+        android:id="@+id/tvMove"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:scrollbars="vertical"
+        android:text="Moves"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMoveHeader" />
+
+    <TextView
+        android:id="@+id/tvHeightLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:text="H:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imageSmall"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="397dp" />
+
+    <TextView
+        android:id="@+id/tvHeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:text="H:"
+        android:textStyle="bold"
+        android:paddingStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageSmall"
+        app:layout_constraintStart_toEndOf="@id/tvHeightLabel"
+        tools:layout_editor_absoluteY="397dp" />
+
+    <TextView
+        android:id="@+id/tvWeightLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:text="W:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imageSmall"
+        app:layout_constraintStart_toEndOf="@id/tvHeight"
+        tools:layout_editor_absoluteY="397dp" />
+
+    <TextView
+        android:id="@+id/tvWeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:text="W:"
+        android:textStyle="bold"
+        android:paddingStart="5dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@id/imageSmall"
+        app:layout_constraintStart_toEndOf="@id/tvWeightLabel"
+        tools:layout_editor_absoluteY="397dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
