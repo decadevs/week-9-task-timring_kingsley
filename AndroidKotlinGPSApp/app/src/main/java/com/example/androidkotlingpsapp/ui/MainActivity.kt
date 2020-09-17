@@ -24,14 +24,19 @@ class MainActivity : AppCompatActivity() {
 
         btnMap.setOnClickListener {
             //GET CURRENT USER AND PARTNER NAMES
+
             currentUser = etCurrentUserName.text.toString()
             partnerName = etPartnerName.text.toString()
-            Toast.makeText(this,"$currentUser",Toast.LENGTH_LONG).show()
-            //GO TO MAP ACTIVITY
-            val intent = Intent(this, MapActivity::class.java)
-                .putExtra("partnerName", partnerName)
-                .putExtra("currentUserName", currentUser)
-            startActivity(intent)
+            if(currentUser.isEmpty() || partnerName.isEmpty()) {
+                Toast.makeText(this, "You should enter your name and partner name to search", Toast.LENGTH_LONG).show()
+            }
+            else {
+                //GO TO MAP ACTIVITY
+                val intent = Intent(this, MapActivity::class.java)
+                    .putExtra("partnerName", partnerName)
+                    .putExtra("currentUserName", currentUser)
+                startActivity(intent)
+            }
         }
     }
 

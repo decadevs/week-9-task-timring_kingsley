@@ -26,48 +26,60 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MapActivity : AppCompatActivity(), OnMapReadyCallback{
+    //permission request can be of any constant
     private val PERMISSION_REQUEST = 100
+
+    //declare fused location, the location api that intelligently combines signal and provides user information
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+
+    //define request as location request which will be used for setting location request based on interval, priority
     private lateinit var request: LocationRequest
+
+    //define database as database reference
     private lateinit var database:DatabaseReference
-    private lateinit var currentUserName:String
+
+    //define locationCallback as LocationCallback which will be used to retrieve notification of the changes of the device location whether it has changed
+    //or cannot be determined
     private lateinit var locationCallback:LocationCallback
+
+
+    //define the currentUsername as string
+    private lateinit var currentUserName:String
+    //define partnerName as string
     private lateinit var partnerName:String
 
+    //define map as GoogleMap
     private lateinit var map:GoogleMap
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
-        // ...
+        //initialize locationCallback
         locationCallback= LocationCallback()
-        //initialize fused location client
+
+        //initialize fusedLocationClient by using the LocationServices FusedLocationProvider
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
 
+        //get the map fragment by referencing the id from the google provided map fragment xml
         val mapFragment=supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
 
-        //get my other partner location from the database and display in map
+        //initialise the database to hold Firebase  database reference
         database= Firebase.database.reference
+
+        //retrive the partner and currentUser name from the intent
         partnerName= intent.getStringExtra("partnerName").toString()
         currentUserName= intent.getStringExtra("currentUserName").toString()
-        if (partnerName != null) {
-            database.child(partnerName).addValueEventListener(getLocationFromPartner())
-        database.child("")
-        }
+
+        //0. point reference to the partner name, adding a value event listener to trigger and get his location when value has changed
+        database.child(partnerName).addValueEventListener(getLocationFromPartner())
 
     }
 
-
-    override fun onMapReady(googleMap: GoogleMap?) {
-        //check that i have requested permisioon to get my location tracked and saved to the database
-        if (googleMap != null) {
-            map=googleMap
-            requestPermission()
-        }
-    }
-
+    //0. when the app is created display the users location on the map, pointing the latestLocation and listening for value change
+    //from the databse snapshot
     private fun getLocationFromPartner():ValueEventListener{
         return object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -89,7 +101,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback{
                             )
                                 .setIcon(BitmapDescriptorFactory.fromBitmap(bitmaps))
                         }
-                        map.animateCamera(CameraUpdateFactory.newLatLngZoom(teamLoc, 18f))
+                        map.animateCamera(CameraUpdateFactory.newLatLngZoom(teamLoc, 20f))
                     }
                 }
             }
@@ -100,28 +112,41 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback{
         }
     }
 
-    private fun requestPermission(){
-            //Check whether this app has access to the location permission//
-            val permission = ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            )
-            //If the location permission has been granted, then start the TrackerService//
-            if (permission == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this,"Permission granted",Toast.LENGTH_LONG).show()
-                requestLocationUpdates()
-                startLocationUpdates()
-            } else {
 
-                //If the app doesn’t currently have access to the user’s location, then request access//
-                ActivityCompat.requestPermissions(
-                    this,
-                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                    PERMISSION_REQUEST
-                );
-            }
+    //1. when the map is ready and not null, initialize map to googleMap and requestPermission
+    override fun onMapReady(googleMap: GoogleMap?) {
+        if (googleMap != null) {
+            map=googleMap
+            requestPermission()
+        }
     }
 
+    //1a. request permission from the user, in other to access location
+    private fun requestPermission(){
+        //Check whether this app has access to the location permission//
+        val permission = ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.ACCESS_FINE_LOCATION
+        )
+        //If the location permission has been granted, then start receiving location updates //
+        if (permission == PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this,"Permission granted",Toast.LENGTH_LONG).show()
+            //a1.
+            requestLocationUpdates()
+            //a2.
+            startLocationUpdates()
+        } else {
+
+            //If the app doesn’t currently have access to the user’s location, then request access//
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                PERMISSION_REQUEST
+            );
+        }
+    }
+
+    //1b. based on the permission, check the result wether to proceed, or finish
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -148,20 +173,26 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback{
         }
     }
 
+    //1a1 recieve current user location with intervals and display on the map
     private fun requestLocationUpdates() {
+
         request = LocationRequest()
         /**interval for receiving location updates**/
-        request.interval = 10000
+        request.interval = 1000
         /**shortest interval for receiving location callBack**/
-        request.fastestInterval = 10000
-        //Get the most accurate location data available//
+        request.fastestInterval = 5000
+
+        //et user location using high accurate settings
         request.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-            //...then request location updates//
+
+        //set location call back to receive updates to location change
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult) {
+
                 val location = locationResult.lastLocation
                 val latitude = location.latitude
                 val longitude = location.longitude
+                map.clear()
                 val firebaseDatabase = FirebaseDatabase.getInstance().getReference("$currentUserName")
                 if (location != null) {
                     //SEND CURRENT LOCATION TO FIREBASE
@@ -178,7 +209,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback{
                         )
                             .setIcon(BitmapDescriptorFactory.fromBitmap(bitmaps))
                     }
-                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentUserLoc, 18f))
+//                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentUserLoc, 20f))
                 }
             }
         }
@@ -192,9 +223,13 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback{
         ) {
             requestPermission()
         }
+
+        //save the settings using fusedLocationClient, specifying the unit process to take place in the System
         fusedLocationClient.requestLocationUpdates(request,locationCallback, Looper.myLooper())
     }
 
+
+    //1a2 update the location
     private fun startLocationUpdates() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
             != PackageManager.PERMISSION_GRANTED &&
@@ -208,4 +243,5 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback{
             null
         )
     }
+
 }
