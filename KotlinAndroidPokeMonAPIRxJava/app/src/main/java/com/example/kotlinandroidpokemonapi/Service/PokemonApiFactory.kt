@@ -1,6 +1,6 @@
 package com.example.kotlinandroidpokemonapi.Service
 
-import com.example.kotlinandroidpokemonapi.APIConstant
+import com.example.kotlinandroidpokemonapi.constants.APIConstant
 
 
 /**

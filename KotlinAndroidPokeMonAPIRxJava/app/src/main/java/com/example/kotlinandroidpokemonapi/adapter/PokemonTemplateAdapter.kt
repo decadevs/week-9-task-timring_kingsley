@@ -1,4 +1,4 @@
-package com.example.kotlinandroidpokemonapi
+package com.example.kotlinandroidpokemonapi.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinandroidpokemonapi.Data.Pokemon
+import com.example.kotlinandroidpokemonapi.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.all_pokemon_recycler_template.view.*
 

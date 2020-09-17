@@ -1,9 +1,8 @@
-package com.example.kotlinandroidpokemonapi
+package com.example.kotlinandroidpokemonapi.ui
 
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.transition.TransitionManager
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
@@ -13,6 +12,9 @@ import androidx.constraintlayout.widget.ConstraintSet
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinandroidpokemonapi.Data.Pokemon
+import com.example.kotlinandroidpokemonapi.adapter.PokemonClickInterface
+import com.example.kotlinandroidpokemonapi.adapter.PokemonTemplateAdapter
+import com.example.kotlinandroidpokemonapi.R
 import com.example.kotlinandroidpokemonapi.Service.PokemonApiFactory
 import com.jakewharton.rxbinding2.widget.RxTextView
 import com.jakewharton.rxbinding2.widget.TextViewTextChangeEvent
@@ -26,10 +28,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
-import kotlin.reflect.jvm.internal.impl.types.checker.TypeCheckerContext
 
 
-class MainActivity : AppCompatActivity(), PokemonClickInterface{
+class MainActivity : AppCompatActivity(), PokemonClickInterface {
     private val pokemonService = PokemonApiFactory.pokeMonApi
     lateinit var editText:EditText
     private val disposables = CompositeDisposable()
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity(), PokemonClickInterface{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         /**
          * When the program launches, get all pokemon's default number of characters i.e 20
@@ -79,7 +81,10 @@ class MainActivity : AppCompatActivity(), PokemonClickInterface{
     }
 
 
+
     private fun fetchPokemon() {
+        rvPokemon.visibility=View.INVISIBLE
+        imgError.visibility=View.VISIBLE
             disposables.add(pokemonService.getPokemonCharacter()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -152,7 +157,8 @@ class MainActivity : AppCompatActivity(), PokemonClickInterface{
 
     private fun showResult(pokemonList: List<Pokemon>){
         imgError.visibility=View.INVISIBLE
-        var adapter=PokemonTemplateAdapter(pokemonList, this)
+        rvPokemon.visibility=View.VISIBLE
+        var adapter= PokemonTemplateAdapter(pokemonList, this)
         rvPokemon.adapter=adapter
     }
 
@@ -162,7 +168,6 @@ class MainActivity : AppCompatActivity(), PokemonClickInterface{
      * When the poke mon is clicked, display the detail
      */
     override fun onPokemonClick(pokemon: Pokemon, position: Int) {
-        imgError.visibility=View.INVISIBLE
         GlobalScope.launch(Dispatchers.Main){
             val pokemonDetailService = pokemonService.getPokemonDetail(pokemon.name)
             val detailResponse= pokemonDetailService.await()
@@ -228,7 +233,7 @@ class MainActivity : AppCompatActivity(), PokemonClickInterface{
      * When a pokemon is clicked, slide in the detail of the pokemon using Constraint set animation
      */
     private fun swapFrames(layoutId: Int){
-        imgError.visibility=View.INVISIBLE
+        imgError.visibility=View.GONE
         val constraintSet=ConstraintSet()
         constraintSet.clone(this, layoutId)
         TransitionManager.beginDelayedTransition(ConstraintLayout)

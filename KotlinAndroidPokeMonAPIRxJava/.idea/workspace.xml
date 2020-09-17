@@ -11,25 +11,13 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5cedccf-f498-43ea-8d5a-d71af9574f3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/BaseRespository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/BaseRespository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/IPokemonLoadable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/IPokemonLoadable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/PokemonRepository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/PokemonTemplateAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/PokemonTemplateAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/Service/PokemonApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/Service/PokemonApi.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/Service/RetrofitFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/Service/RetrofitFactory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/all_pokemon_recycler_template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/all_pokemon_recycler_template.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pokemon_detail_slidein_template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pokemon_detail_slidein_template.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a5cedccf-f498-43ea-8d5a-d71af9574f3e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_30_2" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_7_API_30" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -64,8 +52,8 @@
     <property name="DEBUGGABLE_DEVICE" value="emulator-5554" />
     <property name="DEBUGGABLE_PROCESS" value="com.example.kotlinandroidpokemonapi" />
     <property name="DEBUGGER_ID" value="Auto" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_30_2" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-09-16T14:16:19.814Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="02958107AP007526" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-09-17T08:01:05.865Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
@@ -74,7 +62,12 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.kotlinandroidpokemonapi.constants" />
+      <recent name="com.example.kotlinandroidpokemonapi.ui" />
       <recent name="com.example.kotlinandroidpokemonapi.Data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/example/kotlinandroidpokemonapi/adapter" />
     </key>
   </component>
   <component name="RunManager">
@@ -164,9 +157,10 @@
     </state>
     <state x="485" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/54.23.1386.877@54.23.1386.877" timestamp="1599515753283" />
     <state x="489" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/60.23.1380.877@60.23.1380.877" timestamp="1599661754006" />
-    <state x="487" y="132" width="524" height="658" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1599512689104">
-      <screen x="54" y="23" width="1386" height="877" />
+    <state x="450" y="112" width="557" height="658" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1600277664854">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="450" y="112" width="557" height="658" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1600277664854" />
     <state x="487" y="132" width="524" height="658" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/54.23.1386.877@54.23.1386.877" timestamp="1599512689104" />
     <state x="335" y="223" key="AndroidCreateResourceFileDialog" timestamp="1599583152342">
       <screen x="52" y="23" width="1388" height="877" />
@@ -180,40 +174,40 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="576" y="222" key="AndroidProcessChooserDialog/0.0.1440.900@0.0.1440.900" timestamp="1600197388515" />
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1600273627309">
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1600277829594">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1600273627309" />
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1600277829594" />
     <state width="1338" height="285" key="GridCell.Tab.0.bottom/45.23.1395.877@45.23.1395.877" timestamp="1599752369710" />
     <state width="1338" height="285" key="GridCell.Tab.0.bottom/47.23.1393.877@47.23.1393.877" timestamp="1599730053007" />
     <state width="1344" height="230" key="GridCell.Tab.0.bottom/50.23.1390.877@50.23.1390.877" timestamp="1599598682350" />
     <state width="1344" height="230" key="GridCell.Tab.0.bottom/52.23.1388.877@52.23.1388.877" timestamp="1599604017588" />
     <state width="1338" height="230" key="GridCell.Tab.0.bottom/54.23.1386.877@54.23.1386.877" timestamp="1599664851975" />
     <state width="1338" height="230" key="GridCell.Tab.0.bottom/60.23.1380.877@60.23.1380.877" timestamp="1599661168499" />
-    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1600273627305">
+    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1600277829590">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1600273627305" />
+    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1600277829590" />
     <state width="1338" height="285" key="GridCell.Tab.0.center/45.23.1395.877@45.23.1395.877" timestamp="1599752369709" />
     <state width="1338" height="285" key="GridCell.Tab.0.center/47.23.1393.877@47.23.1393.877" timestamp="1599730052996" />
     <state width="1344" height="230" key="GridCell.Tab.0.center/50.23.1390.877@50.23.1390.877" timestamp="1599598682334" />
     <state width="1344" height="230" key="GridCell.Tab.0.center/52.23.1388.877@52.23.1388.877" timestamp="1599604017585" />
     <state width="1338" height="230" key="GridCell.Tab.0.center/54.23.1386.877@54.23.1386.877" timestamp="1599664851973" />
     <state width="1338" height="230" key="GridCell.Tab.0.center/60.23.1380.877@60.23.1380.877" timestamp="1599661168498" />
-    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1600273627304">
+    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1600277829589">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1600273627304" />
+    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1600277829589" />
     <state width="1338" height="285" key="GridCell.Tab.0.left/45.23.1395.877@45.23.1395.877" timestamp="1599752369696" />
     <state width="1338" height="285" key="GridCell.Tab.0.left/47.23.1393.877@47.23.1393.877" timestamp="1599730052984" />
     <state width="1344" height="230" key="GridCell.Tab.0.left/50.23.1390.877@50.23.1390.877" timestamp="1599598682326" />
     <state width="1344" height="230" key="GridCell.Tab.0.left/52.23.1388.877@52.23.1388.877" timestamp="1599604017584" />
     <state width="1338" height="230" key="GridCell.Tab.0.left/54.23.1386.877@54.23.1386.877" timestamp="1599664851972" />
     <state width="1338" height="230" key="GridCell.Tab.0.left/60.23.1380.877@60.23.1380.877" timestamp="1599661168497" />
-    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1600273627306">
+    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1600277829593">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1600273627306" />
+    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1600277829593" />
     <state width="1338" height="285" key="GridCell.Tab.0.right/45.23.1395.877@45.23.1395.877" timestamp="1599752369710" />
     <state width="1338" height="285" key="GridCell.Tab.0.right/47.23.1393.877@47.23.1393.877" timestamp="1599730053000" />
     <state width="1344" height="230" key="GridCell.Tab.0.right/50.23.1390.877@50.23.1390.877" timestamp="1599598682343" />
